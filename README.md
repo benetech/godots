@@ -1,7 +1,15 @@
 godots
 ======
 
-Software for GoDots conference room availability indicator
+For People with Vision Impairments An Accessible Sign that Indicates the Availability of a Meeting Room
+Avoid those workplace faux paux's
+
+- integrates with Outlook
+- Color indicator
+- Braille indicator
+- Easy mounting
+- Intelligent and automatic updating
+
 
 Raspberry Pi Setup
 1. http://learn.adafruit.com/pi-wifi-radio/raspberry-pi-setup-1-of-3
