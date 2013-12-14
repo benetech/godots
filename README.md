@@ -21,10 +21,15 @@ Raspberry Pi Setup
 4. Install pyserial:
 
 mkdir pyserial
-cd pyserial/
+
+cd pyserial
+
 wget http://sourceforge.net/projects/pyserial/files/latest/pyserial-2.5.tar.gz
+
 gunzip pyserial-2.5.tar.gz 
+
 tar - xvg pyserial-2.5.tar
+
 sudo python setup.py install
 
 Arduino
