@@ -19,15 +19,11 @@ Viewpoint::EWS::EWS.set_auth(ExchAccount.split("|")[0],ExchAccount.split("|")[1]
 #end
 
 def chkconf(email)
-	#an improvement would be to only get availability for the current time and not the whole day
-	#start_time = Time.now.iso8601 GC NOT WORKING
-	#end_time = (Time.now + 7200).iso8601 GC NOT WORKING
-	start_time = DateTime.parse(Time.now.year().to_s + "-" + Time.now.month().to_s + "-" + Time.now.day().to_s).iso8601
-	end_time = DateTime.parse(Time.now.year().to_s + "-" + Time.now.month().to_s + "-" + (Time.now.day()+1).to_s).iso8601
+	start_time = Time.now.iso8601.sub("-08","+00")
+	end_time = (Time.now + 1800).iso8601.sub("-08","+00")
 	user_free_busy = Viewpoint::EWS::MailboxUser.get_user_availability(email,start_time,end_time)
     freebusy = user_free_busy[:free_busy_view][:merged_free_busy][:text]
-    time = Time.now.hour() + (Time.now.min()/60)
-	return freebusy[((time*6)).to_i]
+	return (freebusy[0,2]=="00") ? "free" : "busy"
 end
 
 puts chkconf(conf_email)
