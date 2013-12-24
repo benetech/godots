@@ -26,9 +26,7 @@ cd pyserial
 
 wget http://sourceforge.net/projects/pyserial/files/latest/pyserial-2.5.tar.gz
 
-gunzip pyserial-2.5.tar.gz 
-
-tar - xvg pyserial-2.5.tar
+tar xfzv pyserial-2.5.tar.gz
 
 sudo python setup.py install
 
