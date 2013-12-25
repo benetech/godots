@@ -1,4 +1,4 @@
-godots
+Go Dots Overview
 ======
 
 For People with Vision Impairments An Accessible Sign that Indicates the Availability of a Meeting Room
@@ -11,7 +11,7 @@ Avoid those workplace faux paux's
 - Intelligent and automatic updating
 
 
-Raspberry Pi Setup
+##Raspberry Pi Setup
 
 1. Setup Raspberry Pi: http://learn.adafruit.com/pi-wifi-radio/raspberry-pi-setup-1-of-3
 2. gem install viewpoint
@@ -22,7 +22,7 @@ Raspberry Pi Setup
   - tar xfzv pyserial-2.5.tar.gz
   - sudo python setup.py install
 
-Arduino
+##Arduino
 
 1. Tested with Arduino Uno
 2. Micro Servo Radio Shack #2730765
