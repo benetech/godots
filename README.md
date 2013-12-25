@@ -12,23 +12,20 @@ Avoid those workplace faux paux's
 
 
 Raspberry Pi Setup
+
 1. Setup Raspberry Pi: http://learn.adafruit.com/pi-wifi-radio/raspberry-pi-setup-1-of-3
-
-2. Install Sinatra: http://raspberryalphaomega.org.uk/2013/01/08/ruby-and-sinatra-on-the-raspberry-pi/
-
-3. gem install viewpoint
-
-4. Install pyserial:
-
-mkdir pyserial
-
-cd pyserial
-
-wget http://sourceforge.net/projects/pyserial/files/latest/pyserial-2.5.tar.gz
-
-tar xfzv pyserial-2.5.tar.gz
-
-sudo python setup.py install
+2. gem install viewpoint
+3. Install pyserial:
+  - mkdir pyserial
+  - cd pyserial
+  - wget http://sourceforge.net/projects/pyserial/files/latest/pyserial-2.5.tar.gz
+  - tar xfzv pyserial-2.5.tar.gz
+  - sudo python setup.py install
 
 Arduino
+
+1. Tested with Arduino Uno
+2. Micro Servo Radio Shack #2730765
+3. USB cable to connect Pi to Uno
+4. Additional power to Uno via 9v 1amp power supply
 
