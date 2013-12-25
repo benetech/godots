@@ -15,21 +15,14 @@ void setup()
 
 void loop() 
 { 
-
-incomingByte = Serial.read();  //read serial port
-servoPosition = servoLeft.read(); //read current servoPosition
-
-if (servoPosition == incomingByte)
-{
-  //do nothing
-}
-else
-{
-  // change to incoming position
+incomingByte = int(Serial.read());  //read serial port
+//incomingByte = 1;  //read serial port
+//servoPosition = servoLeft.read(); //read current servoPosition
+if (incomingByte != 255)
   servoPosition = incomingByte;
-  servoLeft.write(servoPosition);
-}
-Serial.println(incomingByte, DEC);
+
+servoLeft.write(servoPosition);
+Serial.println(servoPosition, DEC);
 delay(1000);
 } 
 

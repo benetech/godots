@@ -1,23 +1,26 @@
-import urllib2
+#import urllib2
 import serial
 import sys
 
-print('Connecting...')
-request = urllib2.Request("http://localhost:4567")
-response = urllib2.urlopen(request)
-html = response.read()
-print('Connection Successful')
-sys.stdout.write("Connection result = "  + html)
-sys.stdout.flush()
+#print('Connecting...')
+#request = urllib2.Request("http://localhost:4567")
+#response = urllib2.urlopen(request)
+#html = response.read()
+#print('Connection Successful')
+#sys.stdout.write("Connection result = "  + html)
+#sys.stdout.flush()
 
 print('Connect to Arduino')
-ser = serial.Serial("/dev/ttyACM0", 9600)
+ser = serial.Serial("/dev/cu.usbmodem1421", 9600)
 print('Arduino Connection Successful')
 
 print('sent message to arduino')
 #Need to map resonse html to arduino input
-while 1:
-	print("looping")
-	ser.write('SomeArduinoValue')
+#i = 0
+while 1 == 1:
+	i = 45;
+	#print(i)
+	ser.write(chr(i))
+	print ser.read()
 
 print('Done')
