@@ -15,12 +15,9 @@ Avoid those workplace faux paux's
 
 1. Setup Raspberry Pi: http://learn.adafruit.com/pi-wifi-radio/raspberry-pi-setup-1-of-3
 2. gem install viewpoint
-3. Install pyserial:
-  - mkdir pyserial
-  - cd pyserial
-  - wget http://sourceforge.net/projects/pyserial/files/latest/pyserial-2.5.tar.gz
-  - tar xfzv pyserial-2.5.tar.gz
-  - sudo python setup.py install
+3. gem install serialport
+4. edit chkconf.rb with correct conference room email
+5. setup cron to run chkconf.rb every minute
 
 ##Arduino
 
