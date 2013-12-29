@@ -17,6 +17,7 @@ Avoid those workplace faux paux's
 2. gem install viewpoint
 3. gem install serialport
 4. edit chkconf.rb with correct conference room email
+5. Edit Arduino code to have correct pin for servo and upload code to Arduino
 5. setup cron to run chkconf.rb every minute
 
 ##Arduino
