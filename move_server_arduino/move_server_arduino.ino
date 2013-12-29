@@ -9,7 +9,7 @@ byte incomingByte;
 void setup()
 {
  Serial.begin(9600);        // begin reading arduino's serial port
- servoLeft.attach(13);      // Attach servo to pin 13
+ servoLeft.attach(11);      // Attach servo to pin 13
  servoLeft.write(0);        //begin servo at 0 degrees
 }
 

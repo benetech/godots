@@ -1,22 +1,16 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-#require 'rubygems'
-#require 'sinatra'
 require 'time'
 require 'viewpoint'
+require "serialport"
 
 conf_email = 'crlarge@benetech.org'
 
 include Viewpoint::EWS
 Viewpoint::EWS::EWS.endpoint = 'https://pod51043.outlook.com/ews/Exchange.asmx'
-ExchAccount = File.read("/Users/gerardoc/Documents/PebbleFeed/exchcred.txt")
+ExchAccount = File.read("/home/pi/exchcred.txt")
 Viewpoint::EWS::EWS.set_auth(ExchAccount.split("|")[0],ExchAccount.split("|")[1])
-
-#get '/' do
-  #chkconf(conf_email)
-#  "2"
-#end
 
 def chkconf(email)
 	start_time = Time.now.iso8601.sub("-08","+00")
@@ -26,6 +20,26 @@ def chkconf(email)
 	return (freebusy[0,2]=="00") ? "free" : "busy"
 end
 
-puts chkconf(conf_email)
+def moveservo(position)
+	sp = SerialPort.new("/dev/ttyACM0", 9600, 8, 1, SerialPort::NONE)
+	while true do
+		serialData = sp.gets
+		if serialData
+			i = serialData.chomp
+			puts "data is #{i}"
+			sp.write(position.chr)
+			if i.to_i == position
+				break
+			end
+		end
+	end
+	sp.close
+end
+
+if chkconf(conf_email) == 'free'
+	moveservo(0)
+else
+	moveservo(180)
+end
 
 
